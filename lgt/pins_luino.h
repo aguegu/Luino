@@ -19,7 +19,7 @@
 // XTAL | D8  |  PC0  2|    |27  RST
 // XTAL | D9  |  PC1  3|    |26  PD2  | D2  | INT0
 //               GND  4|    |25  PD1  | D1  | TXD
-//  OC2 | D12 |  PC6  5|    |24  PD0  | D0  | RXD
+//  OC0 | D12 |  PC6  5|    |24  PD0  | D0  | RXD
 //               VCC  6|    |23  PD3  | D3  | INT1
 //  A0  | D17 |  PA0  7|    |22  PD4  | D4  | OC1B
 //  A1  | D18 |  PA1  8|    |21  PD5  | D5  | OC1A

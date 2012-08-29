@@ -10,21 +10,27 @@
 void setup()
 {
 	usart.begin(9600);
-	for (byte i=0;i<25;i++)
-		pinMode(i, OUTPUT);
+	pinMode(15, OUTPUT);
 }
 
 void loop()
 {
-	static byte val = 0x00;
+	static byte val = 0x01;
 
-	for (byte i=0;i<25;i++)
-		pinSet(i);
-	_delay_ms(100);
+	pinWrite(15, val);
+	val = !val;
 
-	for (byte i=0;i<25;i++)
-		pinClear(i);
-	_delay_ms(100);
+	delay(1000);
 
-	usart.write(val++);
+
+//
+//	usart.write(val++);
+
+//	uint32_t t = micros();
+//
+//	usart.write(t>>24);
+//	usart.write(t>>16);
+//	usart.write(t>>8);
+//	usart.write(t);
+
 }

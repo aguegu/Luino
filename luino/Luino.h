@@ -76,7 +76,13 @@ void init(void);
 void setup(void);
 void loop(void);
 
+unsigned long millis();
+unsigned long micros();
+void delay(unsigned long ms);
+void delayMicroseconds(unsigned int us);
+
 void pinMode(uint8_t, uint8_t);
+
 
 
 #ifndef PIN_WRITE

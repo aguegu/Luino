@@ -85,8 +85,26 @@
 
 /* */
 
-#ifdef CLKPS3
 #undef CLKPS3
-#endif
+
+#undef TCCR2A
+#undef COM2A1
+#undef COM2A0
+#undef COM2B1
+#undef COM2B0
+#undef WGM21
+#undef WGM20
+
+#undef TCCR2B
+#undef FOC2A
+#undef FOC2B
+#undef WGM22
+#undef CS22
+#undef CS21
+#undef CS20
+
+#undef TCNT2
+#undef OCR2A
+#undef OCR2B
 
 #endif
