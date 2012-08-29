@@ -14,6 +14,7 @@
 
 #include <avr/pgmspace.h>
 #include <avr/io.h>
+#include "iolgt8f0xa.h"
 #include <avr/interrupt.h>
 
 #ifdef __cplusplus
@@ -69,6 +70,9 @@ extern const uint8_t PROGMEM port_to_output_PGM[];
 #define PORT_D 4
 #endif
 
+void init(void);
+void setup(void);
+void loop(void);
 
 #ifdef __cplusplus
 } // extern "C"

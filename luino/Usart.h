@@ -12,6 +12,8 @@
 #include "new.h"
 #include <avr/sfr_defs.h>
 #include <avr/interrupt.h>
+#include "Luino.h"
+
 
 #ifndef cbi
 #define cbi(sfr, bit) (_SFR_BYTE(sfr) &= ~_BV(bit))
