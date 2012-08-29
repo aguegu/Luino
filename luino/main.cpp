@@ -9,6 +9,8 @@
 
 int main(void)
 {
+	init();
+
 	setup();
 
 	for (;;)

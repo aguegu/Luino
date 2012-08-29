@@ -1,4 +1,4 @@
 Luino
 =====
 
-Adept Arduino to LGT platform
+Lite Arduino on LGT platform

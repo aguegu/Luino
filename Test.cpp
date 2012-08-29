@@ -9,10 +9,16 @@
 
 void setup()
 {
-	sbi(DDRB, DDB5);
+	for (byte i=0;i<25;i++)
+		pinMode(i, OUTPUT);
 }
 
 void loop()
 {
-
+	for (byte i=0;i<25;i++)
+		pinSet(i);
+	_delay_ms(100);
+	for (byte i=0;i<25;i++)
+		pinClear(i);
+	_delay_ms(100);
 }
