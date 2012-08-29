@@ -143,9 +143,6 @@ uint8_t Usart::read(void)
 }
 
 Usart usart(&UBRR0H, &UBRR0L, &UCSR0A, &UCSR0B, &UDR0, RXEN0, TXEN0, RXCIE0, UDRIE0, U2X0, 16);
-//Usart usart(&UBRRH, &UBRRL, &UCSRA, &UCSRB, &UDR, RXEN, TXEN, RXCIE, UDRIE, U2X, 16);
-
-
 
 ISR(USART0_UDRE_vect)
 {

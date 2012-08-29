@@ -10,6 +10,8 @@
 
 void init()
 {
+	CLKPR = 0x80;
+	cbi(CLKPR, CLKPCE);
 	sei();
 	sbi(MCUCR, JTD);
 }

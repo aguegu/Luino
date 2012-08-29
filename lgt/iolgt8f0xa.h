@@ -85,4 +85,8 @@
 
 /* */
 
+#ifdef CLKPS3
+#undef CLKPS3
+#endif
+
 #endif
