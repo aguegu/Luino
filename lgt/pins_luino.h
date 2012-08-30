@@ -10,6 +10,17 @@
 
 #include <avr/pgmspace.h>
 
+#define A0 17
+#define A1 18
+#define A2 19
+#define A3 20
+#define A4 21
+#define A5 22
+#define A6 23
+#define A7 24
+
+#define analogPinToChannel(p)  ((p)>=17?(p)-17:(p))
+
 #ifdef LUINO_MAIN
 
 // LGT8
@@ -31,6 +42,8 @@
 //  A7  | D24 |  PA7 14|    |15  PD7  | D7  | INT2
 //                     +----+
 //
+
+
 
 const uint16_t PROGMEM port_to_mode_PGM[] =
 {

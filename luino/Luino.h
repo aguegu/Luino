@@ -19,7 +19,8 @@
 #include <util/delay.h>
 
 #ifdef __cplusplus
-extern "C"{
+extern "C"
+{
 #endif
 
 // undefine stdlib's abs if encountered
@@ -61,13 +62,15 @@ extern const uint16_t PROGMEM port_to_output_PGM[];
 extern const uint8_t PROGMEM digital_pin_to_timer_PGM[];
 #define digitalPinToTimer(P) ( pgm_read_byte( digital_pin_to_timer_PGM + (P) ) )
 
-
 #define HIGH 0x1
 #define LOW  0x0
 
 #define INPUT 0x0
 #define OUTPUT 0x1
 #define INPUT_PULLUP 0x2
+
+#define REF_AVCC	0
+#define REF_1V25	2
 
 #define NOT_A_PIN 0
 #define NOT_A_PORT 0
@@ -94,11 +97,13 @@ void delay(unsigned long ms);
 #define delayMicroseconds(us) _delay_loop_2((us)<<2)
 // us range from 0 to 16383, 0x3fff
 
-
 void pinMode(uint8_t, uint8_t);
 void digitalWrite(uint8_t, uint8_t);
 void pwmWrite(uint8_t, uint8_t);
+#define analogWrite(pin, val)	pwmWrite(pin, val)
 
+int analogRead(uint8_t pin);
+void analogReference(uint8_t);
 
 #ifndef PIN_WRITE
 #define pinSet(pin)	*portOutputRegister(digitalPinToPort(pin)) |= digitalPinToBitMask(pin)
@@ -107,7 +112,6 @@ void pwmWrite(uint8_t, uint8_t);
 
 #endif
 
-
 #ifdef __cplusplus
 } // extern "C"
 #endif
@@ -115,6 +119,10 @@ void pwmWrite(uint8_t, uint8_t);
 #ifdef __cplusplus
 #include "wiring_private.h"
 #include "Usart.h"
+
+uint16_t makeWord(uint16_t w);
+uint16_t makeWord(byte h, byte l);
+#define word(...) makeWord(__VA_ARGS__)
 
 #endif
 
