@@ -20,17 +20,13 @@ void loop()
 	pinWrite(15, val);
 	val = !val;
 
-	delay(1000);
+	usart.write(val++);
 
+	uint32_t t = micros();
 
-//
-//	usart.write(val++);
-
-//	uint32_t t = micros();
-//
-//	usart.write(t>>24);
-//	usart.write(t>>16);
-//	usart.write(t>>8);
-//	usart.write(t);
+	usart.write(t>>24);
+	usart.write(t>>16);
+	usart.write(t>>8);
+	usart.write(t);
 
 }

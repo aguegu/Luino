@@ -79,11 +79,11 @@ void loop(void);
 unsigned long millis();
 unsigned long micros();
 void delay(unsigned long ms);
-void delayMicroseconds(unsigned int us);
+#define delayMicroseconds(us) _delay_loop_2((us)<<2)
+// us range from 0 to 16383, 0x3fff
+
 
 void pinMode(uint8_t, uint8_t);
-
-
 
 #ifndef PIN_WRITE
 #define pinSet(pin)	*portOutputRegister(digitalPinToPort(pin)) |= digitalPinToBitMask(pin)
