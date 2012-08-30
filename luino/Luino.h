@@ -58,6 +58,13 @@ extern const uint16_t PROGMEM port_to_output_PGM[];
 #define portInputRegister(P) ( (volatile uint8_t *)( pgm_read_word( port_to_input_PGM + (P))) )
 #define portModeRegister(P) ( (volatile uint8_t *)( pgm_read_word( port_to_mode_PGM + (P))) )
 
+extern const uint8_t PROGMEM digital_pin_to_timer_PGM[];
+#define digitalPinToTimer(P) ( pgm_read_byte( digital_pin_to_timer_PGM + (P) ) )
+
+
+#define HIGH 0x1
+#define LOW  0x0
+
 #define INPUT 0x0
 #define OUTPUT 0x1
 #define INPUT_PULLUP 0x2
@@ -72,6 +79,11 @@ extern const uint16_t PROGMEM port_to_output_PGM[];
 #define PORT_D 4
 #endif
 
+#define NOT_ON_TIMER 0
+#define TIMER0	1
+#define TIMER1A 2
+#define TIMER1B 3
+
 void init(void);
 void setup(void);
 void loop(void);
@@ -84,6 +96,9 @@ void delay(unsigned long ms);
 
 
 void pinMode(uint8_t, uint8_t);
+void digitalWrite(uint8_t, uint8_t);
+void analogWrite(uint8_t, uint8_t);
+
 
 #ifndef PIN_WRITE
 #define pinSet(pin)	*portOutputRegister(digitalPinToPort(pin)) |= digitalPinToBitMask(pin)

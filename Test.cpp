@@ -17,16 +17,22 @@ void loop()
 {
 	static byte val = 0x01;
 
-	pinWrite(15, val);
-	val = !val;
+	//digitalWrite(15, val);
+	//val = !val;
 
-	usart.write(val++);
+	analogWrite(12, val);
+	analogWrite(4, val);
+	analogWrite(5, val);
 
-	uint32_t t = micros();
+	val++;
 
-	usart.write(t>>24);
-	usart.write(t>>16);
-	usart.write(t>>8);
-	usart.write(t);
+	delay(10);
+
+//	uint32_t t = micros();
+//
+//	usart.write(t>>24);
+//	usart.write(t>>16);
+//	usart.write(t>>8);
+//	usart.write(t);
 
 }

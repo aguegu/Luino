@@ -87,6 +87,12 @@
 
 #undef CLKPS3
 
+#define COM01 COM0A1
+#define COM00 COM0A0
+
+#undef COM0B1
+#undef COM0B0
+
 #undef TCCR2A
 #undef COM2A1
 #undef COM2A0
