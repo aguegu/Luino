@@ -49,7 +49,11 @@ unsigned long millis()
 
 inline unsigned long time_stamp()
 {
-	return (TCNT0 + (timer0_overflow_count << 8));
+	uint8_t oldSREG = SREG;
+	cli();
+	unsigned long tcnt = TCNT0;
+	SREG = oldSREG;
+	return (tcnt + (timer0_overflow_count << 8));
 }
 
 unsigned long micros()
@@ -60,16 +64,9 @@ unsigned long micros()
 
 void delay(unsigned long ms)
 {
-	uint16_t start = (uint16_t) time_stamp();
+	uint32_t due = timer0_overflow_count + ms;
 
-	while (ms)
-	{
-		if (((uint16_t) time_stamp() - start) >= TIMER_COUNT_PER_MS)
-		{
-			ms--;
-			start += TIMER_COUNT_PER_MS;
-		}
-	}
+	while (timer0_overflow_count<due);
 }
 
 /* Delay for the given number of microseconds.  Assumes a 8 or 16 MHz clock. */
