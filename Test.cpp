@@ -12,13 +12,13 @@ void setup()
 	usart.begin(9600);
 	pinMode(15, OUTPUT);
 	analogReference(REF_1V25);
+	pinMode(A7, INPUT);
 }
 
 void loop()
 {
-	int adc = analogRead(A7);
+	uint8_t val = digitalRead(A7);
 
-	usart.write(highByte(adc));
-	usart.write(lowByte(adc));
-	delay(500);
+	usart.write(val);
+	delay(100);
 }
