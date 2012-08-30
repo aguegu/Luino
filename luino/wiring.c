@@ -41,6 +41,14 @@
 #define TIMER_4BIT_WAVEFROM_FASTPWM_ICR1	14
 #define TIMER_4BIT_WAVEFROM_FASTPWM_OCR1A	15
 
+#define ADC_PRECSCALER_DIVISION_2	0
+#define ADC_PRECSCALER_DIVISION_4	2
+#define ADC_PRECSCALER_DIVISION_8	3
+#define ADC_PRECSCALER_DIVISION_16	4
+#define ADC_PRECSCALER_DIVISION_32	5
+#define ADC_PRECSCALER_DIVISION_64	6
+#define ADC_PRECSCALER_DIVISION_128	7
+
 #define TIMER_CS(reg, n, clock_selection)	\
 	dbi(reg, CS##n##2, bitRead(clock_selection, 2));	\
 	dbi(reg, CS##n##1, bitRead(clock_selection, 1));	\
@@ -56,6 +64,11 @@
 	dbi(TCCR##n##B, WGM##n##2, bitRead(waveform, 2));	\
 	dbi(TCCR##n##A, WGM##n##1, bitRead(waveform, 1));	\
 	dbi(TCCR##n##A, WGM##n##0, bitRead(waveform, 0))
+
+#define ADC_PRESCALER(division)	\
+	dbi(ADCSRA, ADPS2, bitRead(division, 2));	\
+	dbi(ADCSRA, ADPS1, bitRead(division, 1));	\
+	dbi(ADCSRA, ADPS0, bitRead(division, 0))
 
 volatile unsigned long timer0_overflow_count = 0;
 
@@ -112,5 +125,10 @@ void init()
 	TIMER_CS(TCCR1B, 1, TIMER_WITH_EXT_CLK_CS_64);
 	TIMER_4BIT_WAVEFORM(1, TIMER_4BIT_WAVEFROM_PCPWM_8BIT);
 
+	ADC_PRESCALER(ADC_PRECSCALER_DIVISION_128);
+	sbi(ADCSRA, ADEN);
+
 }
+
+
 

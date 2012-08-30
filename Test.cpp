@@ -20,9 +20,9 @@ void loop()
 	//digitalWrite(15, val);
 	//val = !val;
 
-	analogWrite(12, val);
-	analogWrite(4, val);
-	analogWrite(5, val);
+	pwmWrite(12, val);
+	pwmWrite(4, val);
+	pwmWrite(5, val);
 
 	val++;
 

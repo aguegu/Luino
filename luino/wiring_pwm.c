@@ -9,7 +9,7 @@
 #include "pins_luino.h"
 
 
-void analogWrite(uint8_t pin, uint8_t val)
+void pwmWrite(uint8_t pin, uint8_t val)
 {
 	pinMode(pin, OUTPUT);
 	if (val == 0)

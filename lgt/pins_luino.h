@@ -31,9 +31,7 @@
 //  A7  | D24 |  PA7 14|    |15  PD7  | D7  | INT2
 //                     +----+
 //
-// these arrays map port names (e.g. port B) to the
-// appropriate addresses for various functions (e.g. reading
-// and writing)
+
 const uint16_t PROGMEM port_to_mode_PGM[] =
 {
 	NOT_A_PORT,

@@ -97,7 +97,7 @@ void delay(unsigned long ms);
 
 void pinMode(uint8_t, uint8_t);
 void digitalWrite(uint8_t, uint8_t);
-void analogWrite(uint8_t, uint8_t);
+void pwmWrite(uint8_t, uint8_t);
 
 
 #ifndef PIN_WRITE
