@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?fileVersion 4.0.0?>
-
-<cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
 	<storageModule moduleId="org.eclipse.cdt.core.settings">
 		<cconfiguration id="de.innot.avreclipse.configuration.app.debug.319638284">
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="de.innot.avreclipse.configuration.app.debug.319638284" moduleId="org.eclipse.cdt.core.settings" name="Debug">
@@ -27,6 +25,9 @@
 							<builder buildPath="${workspace_loc:/Luino/Debug}" id="de.innot.avreclipse.target.builder.winavr.app.debug.745977439" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="AVR GNU Make Builder" superClass="de.innot.avreclipse.target.builder.winavr.app.debug"/>
 							<tool id="de.innot.avreclipse.tool.assembler.winavr.app.debug.1279617367" name="AVR Assembler" superClass="de.innot.avreclipse.tool.assembler.winavr.app.debug">
 								<option id="de.innot.avreclipse.assembler.option.debug.level.589432391" name="Generate Debugging Info" superClass="de.innot.avreclipse.assembler.option.debug.level"/>
+								<option id="de.innot.avreclipse.asm.option.include.paths.1103645184" name="#include paths for preprocessor(-I)" superClass="de.innot.avreclipse.asm.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Luino/lgt}&quot;"/>
+								</option>
 								<inputType id="de.innot.avreclipse.tool.assembler.input.1095640740" superClass="de.innot.avreclipse.tool.assembler.input"/>
 							</tool>
 							<tool id="de.innot.avreclipse.tool.compiler.winavr.app.debug.2042654506" name="AVR Compiler" superClass="de.innot.avreclipse.tool.compiler.winavr.app.debug">
@@ -35,6 +36,7 @@
 								<option id="de.innot.avreclipse.compiler.option.incpath.2054250585" name="Include Paths (-I)" superClass="de.innot.avreclipse.compiler.option.incpath" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Luino}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Luino/luino}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Luino/lgt}&quot;"/>
 								</option>
 								<inputType id="de.innot.avreclipse.compiler.winavr.input.2104221689" name="C Source Files" superClass="de.innot.avreclipse.compiler.winavr.input"/>
 							</tool>
@@ -44,6 +46,7 @@
 								<option id="de.innot.avreclipse.cppcompiler.option.incpath.1530884146" name="Include Paths (-I)" superClass="de.innot.avreclipse.cppcompiler.option.incpath" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Luino}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Luino/luino}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Luino/lgt}&quot;"/>
 								</option>
 								<inputType id="de.innot.avreclipse.cppcompiler.input.2094462729" superClass="de.innot.avreclipse.cppcompiler.input"/>
 							</tool>
@@ -137,13 +140,8 @@
 		<project id="Luino.de.innot.avreclipse.project.winavr.elf_2.1.0.1468983419" name="AVR Cross Target Application" projectType="de.innot.avreclipse.project.winavr.elf_2.1.0"/>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
-	<storageModule moduleId="refreshScope" versionNumber="2">
-		<configuration configurationName="Release">
-			<resource resourceType="PROJECT" workspacePath="/Luino"/>
-		</configuration>
-		<configuration configurationName="Debug">
-			<resource resourceType="PROJECT" workspacePath="/Luino"/>
-		</configuration>
+	<storageModule moduleId="refreshScope" versionNumber="1">
+		<resource resourceType="PROJECT" workspacePath="/Luino"/>
 	</storageModule>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
